@@ -9,7 +9,8 @@
     "forceConsistentCasingInFileNames": true
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "knexfile.ts"
   ],
   "exclude": [
     "node_modules"

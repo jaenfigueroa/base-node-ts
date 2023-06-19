@@ -1,18 +1,16 @@
 import { development } from '../knexfile';
 import express from 'express';
 import knex from 'knex';
-import dotenv from 'dotenv';
-dotenv.config();
 
 const app = express();
 
 // Configuración de la conexión a la base de datos
 const db = knex(development);
 
-// Ejemplo de ruta que utiliza Knex para realizar una consulta
+// Crear mis rutas
 app.get('/contacts', (req, res) => {
   db.select('*')
-    .from('Contacts')
+    .from('contacts')
     .then(contact => {
       res.json(contact);
     })
@@ -22,6 +20,7 @@ app.get('/contacts', (req, res) => {
     });
 });
 
+// Iniciar el servidor
 app.listen(3000, () => {
   console.log('Servidor escuchando en el puerto 3000');
 });
